@@ -27,5 +27,10 @@ public class SociosTest {
 					System.out.println("Se ha encontrado al socio: " + otroSocio);
 				}
 	}
+	
+	//usar el findAll()???
+	
+	
+	
 
 }
