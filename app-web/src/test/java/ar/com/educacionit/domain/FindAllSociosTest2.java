@@ -12,7 +12,7 @@ public class FindAllSociosTest2 {
 	//ArticuloDaoImpl articuloImpl = new SocioDaoImpl();
 	//CuponDaoImpl cuponImpl = new SocioDaoImpl();
 	
-	ICrud[] cruds = new ICrud[] {socioImpl,/*articuloImpl*/} ;
+	ICrud[] cruds = new ICrud[] {(ICrud) socioImpl,/*articuloImpl*/} ;
 	
 	for(ICrud unCrud : cruds) {
 		if(unCrud instanceof SociosSQLCustom) {

@@ -1,36 +1,27 @@
 package ar.com.educacionit.domain;
 
-import ar.com.educacionit.dao.impl.SocioDaoImpl;
+import ar.com.educacionit.service.CategoriaService;
+import ar.com.educacionit.service.SociosService;
+import ar.com.educacionit.services.impl.CategoriaServiceImpl;
+import ar.com.educacionit.services.impl.SociosServiceImpl;
 
 public class SociosTest {
 
 	public static void main(String[] args) {
-		//alguien cargo los datos desde el teclado
-		String nombre = "Juan";
-		String apellido = "Perez";
+		//alguien cargo los datos desde teclado
+		String nombre = "JUAN";
+		String apellido = "PEREZ";
 		String dni = "123456789";
 		String email = "unmail@mail.com";
-		String direccion = "calle 13";
-		Long pais = 1l;
+		String direccion  = "calle 13";
+		Long pais = 1l;//1=ARG/2=COL/3=BRA ETC ETC
 		
-		//uso el constructor de la clase socios
-		//Socios nuevoSocio = new Socios(nombre, apellido, email, direccion, pais);
+		SociosService service = new SociosServiceImpl();		
+		Socios socio = new Socios(nombre, apellido, email, direccion, pais);		
+		service.save(socio);
 		
-		SocioDaoImpl socioImpl = new SocioDaoImpl();
-		Socios socio = socioImpl.create(new Socios(nombre,apellido,email,direccion,pais));
-		System.out.println("Se ha creado el socio id: " + socio.getId());
-		
-		Socios otroSocio = socioImpl.findById(5l);
-				if(otroSocio != null) {
-					System.out.println("Se ha creado el socio id:" + otroSocio.getId());
-				}else {
-					System.out.println("Se ha encontrado al socio: " + otroSocio);
-				}
+		CategoriaService cservice = new CategoriaServiceImpl();		
+		Categorias categorias = new Categorias("televisore", "abc1234");		
+		cservice.save(categorias);
 	}
-	
-	//usar el findAll()???
-	
-	
-	
-
 }
